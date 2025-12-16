@@ -1,0 +1,37 @@
+[
+  {
+    "title": "Order status lookup",
+    "messages": [
+      { "role": "user", "content": "Where is my latest order?" },
+      { "role": "assistant", "expect": "Status" }
+    ],
+    "expectedIntent": "order_status"
+  },
+  {
+    "title": "Returns policy",
+    "messages": [
+      { "role": "user", "content": "How long do I have to return a product?" } ],
+    "expectedIntent": "returns",
+    "requiresRag": true
+  },
+  {
+    "title": "Product comparison with RAG",
+    "messages": [
+      { "role": "user", "content": "Compare the MacBook Air and the ROG Zephyrus battery life." } ],
+    "expectedIntent": "product_info",
+    "requiresRag": true
+  },
+  {
+    "title": "Small talk greeting",
+    "messages": [
+      { "role": "user", "content": "Hey there!" } ],
+    "expectedIntent": "smalltalk"
+  },
+  {
+    "title": "Unknown questions fallback",
+    "messages": [
+      { "role": "user", "content": "Tell me about space weather today." } ],
+    "expectedIntent": "unknown",
+    "requiresWebSearch": true
+  }
+]

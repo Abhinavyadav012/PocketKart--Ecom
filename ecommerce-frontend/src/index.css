@@ -1,0 +1,162 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-color: #f8fafc;
+  --text-color: #0f172a;
+  --card-bg: #ffffff;
+  --card-text: #111827;
+  --muted-text: #6b7280;
+  --card-shadow: rgba(15, 23, 42, 0.08);
+  --page-gradient: linear-gradient(to bottom, #f8fafc, #f1f5f9);
+  --header-bg: linear-gradient(to right, #0f172a, #1e293b);
+  --header-text: #ffffff;
+  --footer-bg: linear-gradient(to right, #0f172a, #1e293b);
+  --footer-text: #ffffff;
+  --hero-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+  --hero-overlay-strong: rgba(255, 255, 255, 0.2);
+  --hero-overlay-soft: rgba(255, 255, 255, 0.05);
+  --border-color: rgba(148, 163, 184, 0.2);
+}
+
+html[data-theme="dark"],
+html.dark {
+  --bg-color: #0f172a;
+  --text-color: #e2e8f0;
+  --card-bg: #1f2937;
+  --card-text: #f8fafc;
+  --muted-text: #94a3b8;
+  --card-shadow: rgba(15, 23, 42, 0.45);
+  --page-gradient: linear-gradient(to bottom, #0b1120, #0f172a);
+  --header-bg: linear-gradient(to right, #020617, #0f172a);
+  --header-text: #f8fafc;
+  --footer-bg: linear-gradient(to right, #020617, #0f172a);
+  --footer-text: #e2e8f0;
+  --hero-gradient: linear-gradient(135deg, #1d4ed8 0%, #6d28d9 50%, #db2777 100%);
+  --hero-overlay-strong: rgba(15, 23, 42, 0.45);
+  --hero-overlay-soft: rgba(15, 23, 42, 0.25);
+  --border-color: rgba(71, 85, 105, 0.5);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+html.dark body,
+body[data-theme="dark"] {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.hover-expand {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-expand:hover {
+  transform: scale(1.05);
+  box-shadow: 0 20px 50px var(--card-shadow);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a1a1a1;
+}
+
+/* Button Hover Effects */
+.btn-primary {
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 15px 40px rgba(102, 126, 234, 0.6);
+}
+
+.btn-secondary:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+}
+
+/* Card Hover Effects */
+.product-card {
+  transition: all 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+}
+
+.product-card:hover img {
+  transform: scale(1.1);
+}
+
+.product-card img {
+  transition: transform 0.5s ease;
+}
+
+.product-card:hover .product-title {
+  color: #667eea;
+}
+
+/* Feature Card Hover */
+.feature-card {
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: scale(1.05);
+  background: white;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.feature-card:hover .feature-icon {
+  transform: scale(1.2);
+}
+
+.feature-icon {
+  transition: transform 0.3s ease;
+}
+
+/* Link Hover Effects */
+a {
+  transition: color 0.2s ease;
+}
+
+/* Image Thumbnail Hover */
+.thumbnail:hover {
+  border-color: #667eea !important;
+}
+
+/* Quantity Button Hover */
+.qty-btn:hover:not(:disabled) {
+  background: #f3f4f6;
+}
